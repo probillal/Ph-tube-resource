@@ -33,11 +33,14 @@ const displayVideos = (videos) => {
     console.log(video);
     const card = document.createElement("div");
     card.classList = "card card-compact";
-    card.innerHTML = `
-    <figure class="h-[200px]">
+    card.innerHTML = `  
+    <figure class="h-[200px] relative">
     <img
       src="${video.thumbnail}"
       alt="Shoes" class='w-full h-full object-cover'/>
+      <span class="absolute right-2 bottom-2 bg-black text-white">${
+        video.others.posted_date
+      }</span>
   </figure>
   <div class="flex gap-2 px-0 py-2">
     <div>
