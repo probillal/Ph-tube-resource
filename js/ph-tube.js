@@ -7,8 +7,17 @@ const loadCategories = () => {
     .catch((error) => console.log(error()));
 };
 // create display categories
-const displayCategories = (data) => {
-  console.log(data);
+const displayCategories = (categories) => {
+  const categoriesContainer = document.getElementById("categories");
+  categories.forEach((item) => {
+    console.log(item);
+    // create button
+    const button = document.createElement("button");
+    button.innerText = item.category;
+    button.classList = "btn";
+    // add button to category container
+    categoriesContainer.append(button);
+  });
 };
 
 loadCategories();
